@@ -9,3 +9,6 @@ rand = "0.9.2"
 [[bin]]
 name = "rand_gen"
 path = "src/rand_gen.rs"
+[[bin]]
+name = "rock_paper"
+path = "src/rock_paper.rs"
