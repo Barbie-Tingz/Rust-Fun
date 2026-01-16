@@ -27,6 +27,8 @@ println!("Your opponent picked {}!", opp_select);
 
 // this function is to keep score of who is winning
 fn score() {
+    let comp_score = opponent(&opp_select); 
+    let user_score = console(&user_select); 
 
 }
   
@@ -45,15 +47,17 @@ fn console() {
     io::stdin().read_line(&mut user_input).unwrap(); 
 
 //match on the user's answer
-    match user_input.trim() {
-            "Rock" => println!("User picked Rock!"),
-            "Paper" => println!("User picked Paper!"),
-            "Scissors" => println!("User picked Scissors!"),
-            _ => println!("Invalid argument. Please try again!"),
+    let user_select = match user_input.trim() {
+            "Rock" => "Rock",
+            "Paper" => "Paper",
+            "Scissors" => "Scissors!",
+            _ => "Invalid",
     };
+    println!("User picked {}!", answer); 
 }
 
 fn main(){
 console();
 opponent();
+
 }
