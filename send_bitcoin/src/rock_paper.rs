@@ -7,7 +7,7 @@ use rand::Rng;
 
 
 // this function will be for the computer to randomly pick Rock, Paper, Scissors
-fn opponent() {
+fn opponent() -> &'static str{
 
     let comp_selection: u8 = rand::thread_rng().gen_range(1..=3); 
 
@@ -21,14 +21,12 @@ fn opponent() {
     }else{
         "Invalid option"
     };
-
-println!("Your opponent picked {}!", opp_select); 
+    println!("Your opponent picked {}!", opp_select); 
+    opp_select
 }
 
 // this function is to keep score of who is winning
 fn score() {
-    let comp_score = opponent(&opp_select); 
-    let user_score = console(&user_select); 
 
 }
   
@@ -37,7 +35,7 @@ fn winner() {
 
 }
 
-fn console() {
+fn console() -> &'static str {
     println!("Let's play a game of Rock, Paper, Scissors!\n"); 
     println!("Ready?\n Rock\n Paper\n Scissors\n Shoot!\n"); 
 
@@ -50,10 +48,11 @@ fn console() {
     let user_select = match user_input.trim() {
             "Rock" => "Rock",
             "Paper" => "Paper",
-            "Scissors" => "Scissors!",
+            "Scissors" => "Scissors",
             _ => "Invalid",
     };
-    println!("User picked {}!", answer); 
+    println!("User picked {}!", user_select); 
+    user_select
 }
 
 fn main(){
