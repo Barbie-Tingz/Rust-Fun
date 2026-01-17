@@ -7,7 +7,7 @@ use rand::Rng;
 
 
 // this function will be for the computer to randomly pick Rock, Paper, Scissors
-fn opponent() -> &'static str{
+fn opponent() -> &'static str {
 
     let comp_selection: u8 = rand::thread_rng().gen_range(1..=3); 
 
@@ -26,13 +26,33 @@ fn opponent() -> &'static str{
 }
 
 // this function is to keep score of who is winning
-fn score() {
+fn score() -> &'static str{
+    //bring the other functions into scope and assign a variable
+    let comp_choice = opponent();
+    let user_choice = console();
 
+
+    if comp_choice == user_choice {
+        "Tie"
+    }else if comp_choice == "Rock" && user_choice == "Paper"{
+        "User Wins"
+    }else if comp_choice == "Rock" && user_choice == "Scissors"{
+        "Comp Wins"
+    }else if comp_choice == "Paper" && user_choice == "Rock"{
+        "Comp Wins"
+    }else if comp_choice == "Paper" && user_choice == "Scissors"{
+        "User Wins"
+    }else if comp_choice == "Scissors" && user_choice == "Rock"{
+        "User Wins"
+    }else if comp_choice == "Scissors" && user_choice == "Paper"{
+        "Comp Wins"
+    }else{
+        "Invalid"
+    }
 }
   
 // this function is used to say who won
 fn winner() {
-
 }
 
 fn console() -> &'static str {
@@ -58,5 +78,5 @@ fn console() -> &'static str {
 fn main(){
 console();
 opponent();
-
+score();
 }
