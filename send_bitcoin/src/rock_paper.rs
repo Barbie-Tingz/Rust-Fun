@@ -21,15 +21,15 @@ fn opponent() -> &'static str {
     }else{
         "Invalid option"
     };
-    println!("Your opponent picked {}!", opp_select); 
+    println!("\nYour opponent picked {}!", opp_select);
     opp_select
 }
 
 // this function is to keep score of who is winning
 fn score() -> &'static str{
     //bring the other functions into scope and assign a variable
-    let comp_choice = opponent();
     let user_choice = console();
+    let comp_choice = opponent();
 
 
     if comp_choice == user_choice {
@@ -56,9 +56,8 @@ fn winner() {
 }
 
 fn console() -> &'static str {
-    println!("Let's play a game of Rock, Paper, Scissors!\n"); 
-    println!("Ready?\n Rock\n Paper\n Scissors\n Shoot!\n"); 
 
+    println!("\nReady?\n Rock\n Paper\n Scissors\n Shoot!\n"); 
 
 // this is the user's guess "Rock, paper or scissors!"
     let mut user_input = String::new(); 
@@ -76,7 +75,12 @@ fn console() -> &'static str {
 }
 
 fn main(){
-console();
-opponent();
-score();
+
+    println!("Let's play a game of Rock, Paper, Scissors!\n"); 
+
+
+    for i in 1..=3 {
+    println!("{}", score());
+    }
+
 }
