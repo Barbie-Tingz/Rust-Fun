@@ -50,10 +50,6 @@ fn score() -> &'static str{
         "Invalid"
     }
 }
-  
-// this function is used to say who won
-fn winner() {
-}
 
 fn console() -> &'static str {
 
@@ -79,7 +75,7 @@ fn main(){
     println!("Let's play a game of Rock, Paper, Scissors!\n"); 
 
 
-    for i in 1..=3 {
+    for _i in 1..=3 {
     println!("{}", score());
     }
 
