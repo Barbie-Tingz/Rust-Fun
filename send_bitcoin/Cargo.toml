@@ -12,3 +12,6 @@ path = "src/rand_gen.rs"
 [[bin]]
 name = "rock_paper"
 path = "src/rock_paper.rs"
+[[bin]]
+name = "pony_powers"
+path = "src/pony_powers.rs"
